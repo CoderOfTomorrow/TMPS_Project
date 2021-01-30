@@ -26,6 +26,9 @@ namespace Bank.Services
                 Wallets = new List<Wallet>()
             };
 
+            //Single Responsibility Principle(SRP) in action 
+            //we create a new wallet using walletService methode CreateWallet.
+            //in this way every service has his own job to do 
             var newWallet = walletService.CreateWallet();
             newUser.Wallets.Add(newWallet);
 
