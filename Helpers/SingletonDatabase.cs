@@ -3,15 +3,15 @@ using Bank.Models;
 
 namespace Bank.Helpers
 {
-    class Database
+    class SingletonDatabase
     {
-        private Database() { }
+        private SingletonDatabase() { }
 
-        private static Database _instance = null;
+        private static SingletonDatabase _instance = null;
         private static readonly object _lock = new object();
         public List<User> UserContext { get; set; }
 
-        public static Database GetInstance()
+        public static SingletonDatabase GetInstance()
         {
             if (_instance == null)
             {
@@ -19,7 +19,7 @@ namespace Bank.Helpers
                 {
                     if (_instance == null)
                     {
-                        _instance = new Database {
+                        _instance = new SingletonDatabase {
                             UserContext = new List<User>()
                         };
                     }
