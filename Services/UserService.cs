@@ -1,4 +1,6 @@
 ﻿using Bank.Models;
+using Bank.Helpers;
+using Bank.Views;
 using System;
 using System.Collections.Generic;
 
@@ -6,33 +8,58 @@ namespace Bank.Services
 {
     public class UserService
     {
-        private readonly WalletService walletService;
-        public UserService(WalletService walletService)
-        {
-            this.walletService = walletService;
-        }
-        public User Register()
+        private readonly WalletService walletService =  new WalletService();
+        private readonly EmailService emailService = new EmailService();
+        private readonly Database database = Database.GetInstance();
+        
+        public bool Register()
         {
             Console.WriteLine("Enter your email :");
             var email = Console.ReadLine();
-            Console.WriteLine("Enter your password :");
-            var password = Console.ReadLine();
 
-            var newUser = new User
+            if (emailService.CheckEmail(email))
             {
-                Id = Guid.NewGuid(),
-                Email = email,
-                Password = password,
-                Wallets = new List<Wallet>()
-            };
+                Console.WriteLine("\nThis email is already used.");
+                Console.ReadKey();
+                return false;
+            }
+            else
+            {
+                Console.WriteLine("Enter your password :");
+                var password = Console.ReadLine();
 
-            //Single Responsibility Principle(SRP) in action 
-            //we create a new wallet using walletService methode CreateWallet.
-            //in this way every service has his own job to do 
-            var newWallet = walletService.CreateWallet();
-            newUser.Wallets.Add(newWallet);
+                var newUser = new User
+                {
+                    Id = Guid.NewGuid(),
+                    Email = email,
+                    Password = password,
+                    Wallets = new List<Wallet>()
+                };
 
-            return newUser;
+                var newWallet = walletService.CreateWallet();
+                newUser.Wallets.Add(newWallet);
+
+                database.UserContext.Add(newUser);
+                database.SaveData();
+
+                return true;
+            }
+        }
+
+        public bool Login(User user)
+        {
+            foreach(var obj in database.UserContext)
+            {
+                if (user.Email == obj.Email && user.Password == obj.Password)
+                    return true;
+            }
+
+            return false;
+        }
+
+        public void DeletAccount()
+        {
+
         }
 
         public void ShowUserInfo(User user)
