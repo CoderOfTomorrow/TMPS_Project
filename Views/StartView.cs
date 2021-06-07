@@ -16,6 +16,8 @@ namespace Bank.Views
                 Console.WriteLine("1.Register");
                 Console.WriteLine("2.Login");
                 Console.WriteLine("3.Card Service");
+                Console.WriteLine("4.management Service");
+
                 Console.WriteLine("To close our aplication pres X or type \"exit\"");
                 Console.Write("--> ");
                 option = Console.ReadLine();
@@ -34,6 +36,11 @@ namespace Bank.Views
                 {
                     var cardView = new CardView();
                     cardView.GetView();
+                }
+                else if (option == "4")
+                {
+                    var managementView = new ManagementView();
+                    managementView.GetView();
                 }
             }
         }

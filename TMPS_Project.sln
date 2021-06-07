@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank", "Bank.csproj", "{3C208527-AA30-4284-AC45-AA2B23D1753B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank_GUI", "..\Bank_GUI\Bank_GUI.csproj", "{73495139-4E5C-4C0B-ACF3-A8B649CB85C4}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,18 +27,6 @@ Global
 		{3C208527-AA30-4284-AC45-AA2B23D1753B}.Release|x64.Build.0 = Release|Any CPU
 		{3C208527-AA30-4284-AC45-AA2B23D1753B}.Release|x86.ActiveCfg = Release|Any CPU
 		{3C208527-AA30-4284-AC45-AA2B23D1753B}.Release|x86.Build.0 = Release|Any CPU
-		{73495139-4E5C-4C0B-ACF3-A8B649CB85C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{73495139-4E5C-4C0B-ACF3-A8B649CB85C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{73495139-4E5C-4C0B-ACF3-A8B649CB85C4}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{73495139-4E5C-4C0B-ACF3-A8B649CB85C4}.Debug|x64.Build.0 = Debug|Any CPU
-		{73495139-4E5C-4C0B-ACF3-A8B649CB85C4}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{73495139-4E5C-4C0B-ACF3-A8B649CB85C4}.Debug|x86.Build.0 = Debug|Any CPU
-		{73495139-4E5C-4C0B-ACF3-A8B649CB85C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{73495139-4E5C-4C0B-ACF3-A8B649CB85C4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{73495139-4E5C-4C0B-ACF3-A8B649CB85C4}.Release|x64.ActiveCfg = Release|Any CPU
-		{73495139-4E5C-4C0B-ACF3-A8B649CB85C4}.Release|x64.Build.0 = Release|Any CPU
-		{73495139-4E5C-4C0B-ACF3-A8B649CB85C4}.Release|x86.ActiveCfg = Release|Any CPU
-		{73495139-4E5C-4C0B-ACF3-A8B649CB85C4}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
